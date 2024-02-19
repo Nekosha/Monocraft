@@ -22,7 +22,7 @@ from generate_examples import generateExamples
 from polygonizer import PixelImage, generatePolygons
 from generate_continuous_ligatures import generate_continuous_ligatures 
 
-PIXEL_SIZE = 120
+PIXEL_SIZE = 80
 
 characters = json.load(open("./characters.json"))
 diacritics = json.load(open("./diacritics.json"))
@@ -41,9 +41,9 @@ def generateFont():
 	monocraft.encoding = "UnicodeFull"
 	monocraft.version = "3.0"
 	monocraft.weight = "Regular"
-	monocraft.ascent = PIXEL_SIZE * 9
+	monocraft.ascent = PIXEL_SIZE * 12
 	monocraft.descent = PIXEL_SIZE
-	monocraft.em = PIXEL_SIZE * 10
+	monocraft.em = PIXEL_SIZE * 13
 	monocraft.upos = -PIXEL_SIZE # Underline position
 	monocraft.addLookup("ligatures", "gsub_ligature", (), (("liga",(("dflt",("dflt")),("latn",("dflt")))),))
 	monocraft.addLookupSubtable("ligatures", "ligatures-subtable")
